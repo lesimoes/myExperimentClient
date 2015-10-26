@@ -24,6 +24,8 @@
 package br.ufjf.myexperiment.model;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+
 
 /**
  *
@@ -31,21 +33,39 @@ import javax.xml.bind.annotation.XmlAttribute;
  */
 public class Workflow extends SearchResult {
     
+    @XmlAttribute(name = "version")
     private Integer version;
+   
+    @XmlElement(name= "total", required = true)
+    private Integer total;
+
     
-    /**
-     * @return the version
-     */
+
     public Integer getVersion() {
         return version;
     }
 
-    /**
-     * @param version the version to set
-     */
-    @XmlAttribute
+
     public void setVersion(Integer version) {
         this.version = version;
     }
+
+    /**
+     * @return the total
+     */
+    public Integer getTotalS() {
+        return total;
+    }
+
+    /**
+     * @param total the total to set
+     */
+    public void setTotalS(Integer total) {
+        this.total = total;
+    }
+
+
+    
+    
     
 }
